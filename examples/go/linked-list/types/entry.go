@@ -1,7 +1,7 @@
 package types
 
 type Entry struct {
-	Value string
+	Value    string
 	Previous *Entry
-	Next *Entry
+	Next     *Entry
 }
