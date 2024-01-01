@@ -12,3 +12,4 @@ It prints the list showing the pointer addresses while adding some items to the 
 ## Noticeable
 
 * I was not able to declare a function with function body inside a struct. I aimed to use it as kind of a "class", giving it functions, but that didn't work out. One can pass a function with a body inside a struct when instantiating it, but the full body inside the struct does not seem to work. --> I believe this is so that structs focus on being a data structure, and not holding too much logic inside.
+* Having the List struct and `Add()` function in the same file resulted in go not being able to compile because the function could not be found in `List`, I think it's just too ambiguous.
