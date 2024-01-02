@@ -9,14 +9,15 @@ func main() {
 	list := types.List{}
 
 	list.Add("Hello")
-	fmt.Println(list)
 	list.Add("World")
-	fmt.Println(list)
 	list.Add("!")
-	fmt.Println(&list.Entries[0], list.Entries[0])
-	fmt.Println(&list.Entries[1], list.Entries[1])
-	fmt.Println(&list.Entries[2], list.Entries[2])
-	fmt.Printf("%p\n", list.Entries[0])
-	fmt.Printf("%p\n", list.Entries[1])
-	fmt.Printf("%p\n", list.Entries[2])
+	list.Insert(", ", 1)
+	list.Insert("?", 4)
+	list.Insert("# ", 0)
+
+	for i := 0; i < len(list.Entries); i++ {
+		fmt.Printf("%p %v\n", list.Entries[i], list.Entries[i])
+	}
+
+	list.PrintPretty()
 }
