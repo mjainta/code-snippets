@@ -63,3 +63,17 @@ func (list *List) Insert(value string, index int) {
 		}
 	}
 }
+
+func (list *List) Remove(index int) {
+	if index == 0 {
+		list.Entries = list.Entries[1:]
+		list.Entries[0].Previous = nil
+	} else if index == len(list.Entries)-1 {
+		list.Entries = list.Entries[:len(list.Entries)-1]
+		list.Entries[len(list.Entries)-1].Next = nil
+	} else {
+		list.Entries = append(list.Entries[:index], list.Entries[index+1:]...)
+		list.Entries[index].Previous.Next = list.Entries[index]
+		list.Entries[index].Next.Previous = list.Entries[index]
+	}
+}
