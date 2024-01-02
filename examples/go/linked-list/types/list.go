@@ -20,7 +20,6 @@ func (list *List) Add(value string) {
 
 	if list.Tail != nil {
 		list.Tail.Next = &newEntry
-		// list.Tail = types.Entry{Value: list.Tail.Next.Value, Next: &newEntry, Previous: list.Tail}
 		fmt.Println("Setting tail next to", &newEntry)
 	}
 
